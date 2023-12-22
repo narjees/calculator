@@ -40,8 +40,7 @@ pipeline {
         }
     }
     post {
-        always  
-            withEnv(["JENKINS_JAVA_OPTIONS=-Dmail.smtp.ssl.trust=smtp.gmail.com"]){ 
+        always  { 
             mail to: 'dahbinarjis@gmail.com',
             subject: "Cher lion, votre compilation est terminée: ${currentBuild.fullDisplayName}",
             body: "Votre build est accompli. Veuillez vérifier: ${env.BUILD_URL}"
