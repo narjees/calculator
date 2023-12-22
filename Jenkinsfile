@@ -40,12 +40,11 @@ pipeline {
         }
     }
     post {
-        always  { 
+        always {
             mail to: 'dahbinarjis@gmail.com',
-            subject: "Cher lion, votre compilation est terminée: ${currentBuild.fullDisplayName}",
-            body: "Votre build est accompli. Veuillez vérifier: ${env.BUILD_URL}"
+                 subject: "Cher lion, votre compilation est terminée: ${currentBuild.fullDisplayName}",
+                 body: "Votre build est accompli. Veuillez vérifier: ${env.BUILD_URL}"
         }
     }
 }
-
 
